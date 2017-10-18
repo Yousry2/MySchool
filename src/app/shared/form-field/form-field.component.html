@@ -1,0 +1,30 @@
+ 
+<div [formGroup]="form" >
+
+  
+  <div [ngSwitch]="fieldBase.controlType">
+<mat-form-field *ngSwitchCase="'textbox'" #{{fieldBase.key}} class="quiz-field" >
+    <input  matInput placeholder="{{fieldBase.label}}" class="quiz-field"  [formControlName]="fieldBase.key"
+            [id]="fieldBase.key"  >
+   </mat-form-field>
+   <div *ngSwitchCase="'checkbox'" class="quiz-field">
+   <label [attr.for]="fieldBase.key">{{fieldBase.label}}</label>
+    <mat-checkbox   [formControlName]="fieldBase.key"
+            [id]="fieldBase.key" >
+            </mat-checkbox>
+    </div>        
+<mat-form-field *ngSwitchCase="'dropdown'" class="quiz-field"  >
+    <mat-select placeholder="{{fieldBase.label}}"  [id]="fieldBase.key" [formControlName]="fieldBase.key">
+      <mat-option *ngFor="let opt of fieldBase.options" [value]="opt.key">{{opt.value}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+	<mat-form-field *ngSwitchCase="'number'" class="quiz-field" >
+    <input  matInput placeholder="{{fieldBase.label}}"   type="number" [formControlName]="fieldBase.key"
+            [id]="fieldBase.key" >
+   </mat-form-field>
+
+  </div> 
+
+  <div class="errorMessage" *ngIf="!isValid">{{fieldBase.label}} is required</div>
+</div>

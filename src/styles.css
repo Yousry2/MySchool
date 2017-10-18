@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+
+
+
+
+.school-sidenav-fab-container mat-sidenav {
+  width: 250px;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 90%;
+}
+
+mat-sidenav-container{
+	height: 100%;
+}
+
+
+.mat-action-row {
+    padding :  4px 4px 4px 12px !important;
+	justify-content : left !important;
+}
+
+.mat-expansion-panel-header-description{
+	flex-flow: row-reverse;
+	margin-right : 0px !importants;
+}
+
+.side-nav-title{
+	margin: 4px 0px 0px 10px;
+}
+
+
+.quiz-card{
+	margin-left: 30%;
+    margin-right: 30%;
+}
+
+
+.quiz-field{
+	width: 100%;
+	text-align:left;
+}
+
+.field-required{
+	color : red;
+}

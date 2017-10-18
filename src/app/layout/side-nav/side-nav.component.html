@@ -1,0 +1,31 @@
+<mat-sidenav #sidenav mode="side" opened="true">
+
+<button mat-icon-button [matMenuTriggerFor]="menu">
+	
+</button>
+
+<mat-accordion class="example-headers-align"> <mat-expansion-panel
+	*ngFor="let school of schools; let i = index" [attr.data-index]="i"
+	[expanded]="openedDepartment === i"
+	(opened)="openDepartment(school.id)" hideToggle="true">
+<mat-expansion-panel-header> <mat-panel-title>
+<mat-icon>account_balance</mat-icon>
+<p class="side-nav-title">{{school.name}}</p>
+</mat-panel-title> <mat-panel-description> <mat-icon>more_vert</mat-icon>
+</mat-panel-description> </mat-expansion-panel-header> <mat-action-row
+	*ngFor="let department of school.departments; let z = index"
+	[attr.data-index]="i" (click)="getQuizes(department)">
+<button mat-button (click)="getQuizes(department)">{{department.name}}</button>
+</mat-action-row> </mat-expansion-panel> </mat-accordion> <mat-menu #menu="matMenu"> </mat-menu> </mat-sidenav>
+
+
+
+
+
+
+
+
+
+
+
+

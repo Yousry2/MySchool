@@ -10,7 +10,7 @@ http://grelix.com:8080/schoolweb/
   
 1- Install angular cli from here https://github.com/angular/angular-cli  
 2- Download MySchool app  
-3- Using terminal, Goto app directory   
+3- goto app directory,   
 4- run npm install   
 5- run ng serve command  
 4- Open localhost:4200 in your browser  
@@ -28,7 +28,7 @@ http://grelix.com:8080/schoolweb/
 key: Identifer   
 label: placeholder  
 controlType: type   
-required: true|false    
+required: required field   
 options: (used with 'dropdown' field type) array of key/value options for select component   
 order: Element order inside the form   
 dependant: dependant element key  

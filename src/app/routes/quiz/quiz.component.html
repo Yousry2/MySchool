@@ -1,0 +1,39 @@
+<div style="text-align: center">
+	<h1>
+		<p>Welcome to {{department ? department.name : 'My School'}}</p>
+	</h1>
+	<mat-form-field> <mat-select placeholder="Choose Quiz"
+		[(ngModel)]="selectedQuiz" name=""
+		(change)="getForms(selectedQuiz.id)"> <mat-option
+		*ngFor="let quiz of quizList" [value]="quiz">
+	{{quiz.name}} </mat-option> </mat-select> </mat-form-field>
+
+
+
+
+
+	<div *ngIf="fields.length>0">
+		<mat-card class="quiz-card">
+
+		<form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+			<div *ngFor="let field of fields" class="form-row">
+
+				<app-form-field [fieldBase]="field" [form]="form"></app-form-field>
+
+			</div>
+
+			<div class="form-row">
+				<br />
+				<button mat-raised-button color="accent" [disabled]="!form.valid">Submit</button>
+			</div>
+		</form>
+
+
+		</mat-card>
+
+
+	</div>
+
+
+</div>
